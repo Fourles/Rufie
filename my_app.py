@@ -1,0 +1,77 @@
+# напиши здесь код основного приложения и первого экрана
+from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QPushButton, QLineEdit, QVBoxLayout, QHBoxLayout
+from PyQt5.QtCore import Qt
+
+app = QApplication([])
+#первое окно
+win = QWidget()
+win.setWindowTitle('окно 1')
+win.resize(1920, 1080)
+win.show()
+#скрытие первого окна
+def dasd():
+    win.hide()
+    win2.show()
+#первое окно 2
+label1 = QLabel('Добро пожаловать в программу по определению состояния здоровья!')
+label2 = QLabel('Тест Руфье: тут крч текст много букаф мне лень его печатать')
+button1 = QPushButton('Начать')
+v_line1 = QVBoxLayout()
+v_line1.addWidget(label1, alignment=Qt.AlignCenter)
+v_line1.addWidget(label2, alignment=Qt.AlignCenter)
+v_line1.addWidget(button1, alignment=Qt.AlignCenter)
+win.setLayout(v_line1)
+button1.clicked.connect(dasd)
+#второе окно
+win2 = QWidget()
+win2.setWindowTitle('окно 2')
+win2.resize(1920, 1080)
+win2.hide()
+#скрытие второго окна
+def dasd2():
+    win2.hide()
+    win3.show()   
+#второе окно 2
+label3 = QLabel('Текст1')
+line_edit1 = QLineEdit()
+label4 = QLabel('Текст2')
+line_edit2 = QLineEdit()
+label5 = QLabel('Текст3')
+button2 = QPushButton('Нажми меня1')
+line_edit3 = QLineEdit()
+label6 = QLabel('Текст4')
+button3 = QPushButton('Нажми меня2')
+label7 = QLabel('Текст5')
+button4 = QPushButton('Нажми меня3')
+line_edit4 = QLineEdit()
+line_edit5 = QLineEdit()
+button4 = QPushButton('След. окно')
+label_timer = QLabel('Тут время')
+v_line2 = QVBoxLayout()
+v_line2.addWidget(label3, alignment=Qt.AlignLeft)
+v_line2.addWidget(line_edit1, alignment=Qt.AlignLeft)
+v_line2.addWidget(label4, alignment=Qt.AlignLeft)
+v_line2.addWidget(line_edit2, alignment=Qt.AlignLeft)
+v_line2.addWidget(label5, alignment=Qt.AlignLeft)
+v_line2.addWidget(button2, alignment=Qt.AlignLeft)
+v_line2.addWidget(line_edit3, alignment=Qt.AlignLeft)
+v_line2.addWidget(label6, alignment=Qt.AlignLeft)
+v_line2.addWidget(button3, alignment=Qt.AlignLeft)
+v_line2.addWidget(label7, alignment=Qt.AlignLeft)
+v_line2.addWidget(line_edit4, alignment=Qt.AlignLeft)
+v_line2.addWidget(line_edit5, alignment=Qt.AlignLeft)
+v_line2.addWidget(button4, alignment=Qt.AlignCenter)
+v_line3 = QVBoxLayout()
+v_line3.addWidget(label_timer, alignment=Qt.AlignCenter)
+h_line = QHBoxLayout()
+h_line.addLayout(v_line2)
+h_line.addLayout(v_line3)
+win2.setLayout(h_line)
+button4.clicked.connect(dasd2)
+#третье окно
+win3 = QWidget()
+win3.setWindowTitle('окно 3')
+win3.resize(1920, 1080)
+win3.hide()
+
+app.exec_()
